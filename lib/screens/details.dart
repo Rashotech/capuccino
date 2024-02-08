@@ -22,9 +22,15 @@ class DetailsScreen extends StatelessWidget {
             ),
           ],
         ),
-        body: const Column(
-          children: [
-          ],
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              Image.asset("assets/images/Rectangle 1706.jpg",
+                  width: 600, height: 240, fit: BoxFit.cover),
+              
+            ],
+          ),
         ));
   }
 }
