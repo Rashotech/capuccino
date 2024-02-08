@@ -30,6 +30,11 @@ class DetailsScreen extends StatelessWidget {
               Image.asset("assets/images/Rectangle 1706.jpg",
                   width: 600, height: 240, fit: BoxFit.cover),
               const ProductInfoSection(productName: "Cappuccino", topping: "with Chocolate", rating: 4.8, reviewCount: 230),
+              const SizedBox(height: 10), 
+              const Divider(
+                color: Color(0xFFCCCCCC),
+                thickness: 1,
+              ),
             ],
           ),
         ));
