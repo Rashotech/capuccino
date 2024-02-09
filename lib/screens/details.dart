@@ -1,3 +1,4 @@
+import 'package:capuccino/components/product_description_section.dart';
 import 'package:capuccino/components/product_info_section.dart';
 import 'package:flutter/material.dart';
 
@@ -35,6 +36,7 @@ class DetailsScreen extends StatelessWidget {
                 color: Color(0xFFCCCCCC),
                 thickness: 1,
               ),
+              const ProductDescriptionSection(description: "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk. The foamy milk texture, achieved through steaming and frothing, tops off this classic Italian drink, imparting a creamy richness and a satisfying mouthfeel."),
             ],
           ),
         ));
