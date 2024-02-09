@@ -1,3 +1,4 @@
+import 'package:capuccino/components/product_cta_section.dart';
 import 'package:capuccino/components/product_description_section.dart';
 import 'package:capuccino/components/product_info_section.dart';
 import 'package:capuccino/components/product_size_list_section.dart';
@@ -29,9 +30,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
     });
   }
 
+  double getPrice() {
+    return widget.sizes.firstWhere((size) => size.active).price;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color(0xFFFBFBFB),
         appBar: AppBar(
           leading: Image.asset("assets/images/arrow-left.jpg"),
           title: Text(widget.title,
@@ -47,30 +53,44 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              Image.asset("assets/images/Rectangle 1706.jpg",
-                  width: 600, height: 240, fit: BoxFit.cover),
-              const ProductInfoSection(
-                  productName: "Cappuccino",
-                  topping: "with Chocolate",
-                  rating: 4.8,
-                  reviewCount: 230),
-              const SizedBox(height: 15),
-              const Divider(
-                color: Color(0xFFCCCCCC),
-                thickness: 1,
+        body: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Column(
+                    children: [
+                      Image.asset("assets/images/Rectangle 1706.jpg",
+                          width: 600, height: 240, fit: BoxFit.cover),
+                      const ProductInfoSection(
+                          productName: "Cappuccino",
+                          topping: "with Chocolate",
+                          rating: 4.8,
+                          reviewCount: 230),
+                      const SizedBox(height: 15),
+                      const Divider(
+                        color: Color(0xFFCCCCCC),
+                        thickness: 1,
+                      ),
+                      const ProductDescriptionSection(
+                          description:
+                              "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk. The foamy milk texture, achieved through steaming and frothing, tops off this classic Italian drink, imparting a creamy richness and a satisfying mouthfeel."),
+                      const SizedBox(height: 15),
+                      ProductSizeListSection(
+                          sizes: widget.sizes,
+                          onSizeSelected: _handleSizeSelected),
+                    ],
+                  ),
+                ),
               ),
-              const ProductDescriptionSection(
-                  description:
-                      "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk. The foamy milk texture, achieved through steaming and frothing, tops off this classic Italian drink, imparting a creamy richness and a satisfying mouthfeel."),
-              const SizedBox(height: 15),
-              ProductSizeListSection(
-                  sizes: widget.sizes, onSizeSelected: _handleSizeSelected),
-            ],
-          ),
+            ),
+            Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: ProductCTASection(price: getPrice()))
+          ],
         ));
   }
 }
