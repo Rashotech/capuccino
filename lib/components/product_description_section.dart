@@ -28,7 +28,7 @@ class _ProductDescriptionSectionState extends State<ProductDescriptionSection> {
         const Align(
           alignment: Alignment.topLeft,
           child: Text("Description",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
         ),
         const SizedBox(height: 10),
         buildText(widget.description),
@@ -53,7 +53,7 @@ class _ProductDescriptionSectionState extends State<ProductDescriptionSection> {
                   text: displayText,
                   style: const TextStyle(
                     fontSize: 15,
-                    color: Colors.grey,
+                    color: Color(0xFF9B9B9b),
                   ),
                 ),
                 if (isDescriptionLong)
