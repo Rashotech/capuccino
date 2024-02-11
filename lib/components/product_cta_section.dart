@@ -14,6 +14,12 @@ class ProductCTASection extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
         color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 1.0,
+          ),
+        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
