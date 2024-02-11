@@ -53,7 +53,7 @@ class _ProductDescriptionSectionState extends State<ProductDescriptionSection> {
                   text: displayText,
                   style: const TextStyle(
                     fontSize: 15,
-                    color: Color(0xFF9B9B9b),
+                    color: Color(0xFF9B9B9B),
                   ),
                 ),
                 if (isDescriptionLong)
