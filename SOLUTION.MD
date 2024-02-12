@@ -11,6 +11,6 @@ This is a Flutter screen that displays a cappuccino with chocolate Product. The 
 -   Open the project in a code editor.
 -   Run the app using the flutter run command.
 
-## Screenshot:
+## Screenshot
 
 ![Screenshot of Project HomePage UI](./screenshot.png)
