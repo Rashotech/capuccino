@@ -37,60 +37,60 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFFBFBFB),
-        appBar: AppBar(
-          leading: Image.asset("assets/images/arrow-left.jpg"),
-          title: Text(widget.title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              )),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: Image.asset(
-                'assets/images/Heart.jpg',
-              ),
+      backgroundColor: const Color(0xFFFBFBFB),
+      appBar: AppBar(
+        leading: Image.asset("assets/images/arrow-left.jpg"),
+        title: Text(widget.title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            )),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: Image.asset(
+              'assets/images/Heart.jpg',
             ),
-          ],
-        ),
-        body: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Column(
-                    children: [
-                      Image.asset("assets/images/Rectangle 1706.jpg",
-                          width: 600, height: 240, fit: BoxFit.cover),
-                      const ProductInfoSection(
-                          productName: "Cappuccino",
-                          topping: "with Chocolate",
-                          rating: 4.8,
-                          reviewCount: 230),
-                      const SizedBox(height: 15),
-                      const Divider(
-                        color: Color(0xFFCCCCCC),
-                        thickness: 1,
-                      ),
-                      const ProductDescriptionSection(
-                          description:
-                              "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk. The foamy milk texture, achieved through steaming and frothing, tops off this classic Italian drink, imparting a creamy richness and a satisfying mouthfeel."),
-                      const SizedBox(height: 15),
-                      ProductSizeListSection(
-                          sizes: widget.sizes,
-                          onSizeSelected: _handleSizeSelected),
-                    ],
-                  ),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  children: [
+                    Image.asset("assets/images/Rectangle 1706.jpg",
+                        width: 600, height: 240, fit: BoxFit.cover),
+                    const ProductInfoSection(
+                        productName: "Cappuccino",
+                        topping: "with Chocolate",
+                        rating: 4.8,
+                        reviewCount: 230),
+                    const SizedBox(height: 15),
+                    const Divider(
+                      color: Color(0xFFCCCCCC),
+                      thickness: 1,
+                    ),
+                    const ProductDescriptionSection(
+                        description:
+                            "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk. The foamy milk texture, achieved through steaming and frothing, tops off this classic Italian drink, imparting a creamy richness and a satisfying mouthfeel."),
+                    const SizedBox(height: 15),
+                    ProductSizeListSection(
+                        sizes: widget.sizes,
+                        onSizeSelected: _handleSizeSelected),
+                  ],
                 ),
               ),
             ),
-            Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: ProductCTASection(price: getPrice()))
-          ],
-        ));
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ProductCTASection(price: getPrice()),
+          )
+        ],
+      ),
+    );
   }
 }
